@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class ="container">
+    {% for todo in todos.all %}
+        <h4><input type="checkbox" name = {{todo.title}} value ={{todo.title}}>{{todo.title}}</h4>
+        <p>   {{todo.deadline}}까지</p>
+            <form action = "{% url 'delete' todo.id %}" method = "POST">
+                {% csrf_token %}
+                <input type = "submit" value = "삭제">
+            </form>
+            <form action = "{% url 'edit' todo.id %}" method = "POST">
+                {% csrf_token %}
+                <input type = "submit" value = "수정">
+            </form>
+        <br>
+        
+    {% endfor %}
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<br>
+<div class = "container">
+    <form action ="{% url 'create' %}">
+        <h5>추가할 일정 :</h5>
+        <input type ="text" name = "title">
+        <br>
+        <br>
+        <h5>언제까지? </h5>
+        <input type = "text" name = "deadline">
+        <br><br>
+        <input class = "btn-btn-dark" type = "submit" value ="추가하기">
+    </form>
+</div>
+{% endblock %}
